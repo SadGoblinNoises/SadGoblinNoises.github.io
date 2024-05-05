@@ -1,12 +1,62 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Pages Test</title>
-</head>
-<body>
-  <h1>Hello, GitHub Pages!</h1>
-  <p>This is a test page to ensure everything is working correctly.</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitHub Pages Test</title>
+
+        <style>
+
+*, :before, :after {
+    box-sizing border-box;
+    font inherit;
+}
+
+html {
+    font-size 10px;
+}
+
+body {
+    font-size 1.6rem;
+    min-height 100svh;
+}
+          
+button, input, select, textarea {
+    min-width 0;
+    font inherit;
+    margin 0;
+}
+          
+[type='number']::-webkit-inner-spin-button {
+    opacity 1;
+}
+          
+img, picture, svg, video {
+    display block;
+    max-width 100%;
+}
+          
+h1, h2, h3, h4, h5, h6 {
+    text-wrap balance;
+}
+          
+p {
+    text-wrap pretty;
+}
+          
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior smooth;
+        scroll-padding 3rem;
+    }
+}
+          
+        </style>
+    </head>
+  
+    <body>
+        <h1>Hello, GitHub Pages!</h1>
+        <p>This is a test page to ensure everything is working correctly.</p>
+    </body>
 </html>
