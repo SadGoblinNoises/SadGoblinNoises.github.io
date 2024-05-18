@@ -45,6 +45,10 @@
                 scroll-padding: 3rem;
             }
         }
+        body {
+            background: url("img/metall.jpg");
+            background-size: cover;
+        }
         .slider {
             list-style: none;
             margin: 0;
@@ -83,7 +87,7 @@
         @media (orientation: landscape) {
             .pfeile {
                 left: 96vh;
-                top: calc(50vh - 45px);
+                top: calc(50vh - 50px);
                 width: 10px;
             }
         }
@@ -91,11 +95,12 @@
             border: none;
             background: #fff;
             border-radius: 5px;
-            padding:  0 10px 5px;
+            padding: 5px 10px;
         }
         @media (orientation: landscape) {
             button {
                 margin-bottom: 10px;
+                padding: 5px 15px;
             }
         }
         #text {
@@ -118,7 +123,10 @@
     <script>
         function bildwechsel(delta = 1) {
             const slider = document.querySelector('.slider');
-            const scrollAmount = delta * window.innerWidth;
+            var scrollAmount = delta * window.innerWidth;
+            if (window.innerWidth > window.innerHeight) {
+                scrollAmount = delta * window.innerHeight;
+            }
             slider.scrollBy({
                 top: 0,
                 left: scrollAmount,
@@ -146,6 +154,7 @@
         <li><img src="img/entwicklungshilfe/hochzeit.jpg"></li>
 
         <li><img src="img/karlstadt/blumen.jpg"></li>
+        <li><img src="img/karlstadt/familie1.jpg"></li>
         <li><img src="img/karlstadt/strand.jpg"></li>
         <li><img src="img/karlstadt/strand2.jpg"></li>
         <li><img src="img/karlstadt/wasser.jpg"></li>
