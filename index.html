@@ -1,62 +1,167 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GitHub Pages Test</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josef Görlich 09.03.1941 - 02.05.2024</title>
+    <style>
+        *, :before, :after {
+            box-sizing: border-box;
+            font: inherit;
+        }
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-size: 1.6rem;
+            min-height: 100svh;
+            background: #000;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+            scroll-snap-type: x mandatory;
+        }
+        button, input, select, textarea {
+            min-width: 0;
+            font: inherit;
+            margin: 0;
+        }
+        [type='number']::-webkit-inner-spin-button {
+            opacity: 1;
+        }
+        img, picture, svg, video {
+            display: block;
+            max-width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-wrap: balance;
+        }
+        p {
+            text-wrap: pretty;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            :has(:target) {
+                scroll-behavior: smooth;
+                scroll-padding: 3rem;
+            }
+        }
+        .slider {
+            list-style: none;
+            margin: 0;
+            display: flex;
+            gap: 3vw;
+            padding: min(3vw, 3vh);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            height: min(100vh, 100vw);
+            width: min(100vh, 100vw);
+        }
+        .slider > li {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            scroll-snap-align: center;
+            flex: none;
+        }
+        .slider > li > img {
+            width: 94vw;
+            height: 94vw;
+            max-height: 94vh;
+            max-width: 94vh;
+            border-radius: 2vh;
+            border: min(3vw,3vh) solid #fff;
+        }
+        .pfeile {
+            position: absolute;
+            top: 96vw;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 200%;
+        }
+        @media (orientation: landscape) {
+            .pfeile {
+                left: 96vh;
+                top: calc(50vh - 45px);
+                width: 10px;
+            }
+        }
+        button {
+            border: none;
+            background: #fff;
+            border-radius: 5px;
+            padding:  0 10px 5px;
+        }
+        @media (orientation: landscape) {
+            button {
+                margin-bottom: 10px;
+            }
+        }
+        #text {
+            position: absolute;
+            top: 120vw;
+            width: 100%;
+            text-align: center;
+        }
+        @media (orientation: landscape) {
+            #text {
+                top: calc(50vh - 6rem);
+                left: 120vh;
+                width: calc(100vw - 140vh);
+            }
+        }
+        h1 {
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function bildwechsel(delta = 1) {
+            const slider = document.querySelector('.slider');
+            const scrollAmount = delta * window.innerWidth;
+            slider.scrollBy({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</head>
 
-        <style>
+<body>
 
-*, :before, :after {
-    box-sizing border-box;
-    font inherit;
-}
+    <ul class="slider">
+        <li><img src="img/karlstadt/josef.jpg"></li>
 
-html {
-    font-size 10px;
-}
+        <li><img src="img/kindheit/passbild.jpg"></li>
+        <li><img src="img/kindheit/mit-eltern.jpg"></li>
+        <li><img src="img/kindheit/mit-familie.jpg"></li>
+        <li><img src="img/kindheit/auto.jpg"></li>
 
-body {
-    font-size 1.6rem;
-    min-height 100svh;
-}
-          
-button, input, select, textarea {
-    min-width 0;
-    font inherit;
-    margin 0;
-}
-          
-[type='number']::-webkit-inner-spin-button {
-    opacity 1;
-}
-          
-img, picture, svg, video {
-    display block;
-    max-width 100%;
-}
-          
-h1, h2, h3, h4, h5, h6 {
-    text-wrap balance;
-}
-          
-p {
-    text-wrap pretty;
-}
-          
-@media (prefers-reduced-motion: no-preference) {
-    :has(:target) {
-        scroll-behavior smooth;
-        scroll-padding 3rem;
-    }
-}
-          
-        </style>
-    </head>
-  
-    <body>
-        <h1>Hello, GitHub Pages!</h1>
-        <p>This is a test page to ensure everything is working correctly.</p>
-    </body>
+        <li><img src="img/entwicklungshilfe/bagger.jpg"></li>
+        <li><img src="img/entwicklungshilfe/dachstuhl.jpg"></li>
+        <li><img src="img/entwicklungshilfe/kaputt.jpg"></li>
+        <li><img src="img/entwicklungshilfe/mauer.jpg"></li>
+        <li><img src="img/entwicklungshilfe/lesen.jpg"></li>
+        <li><img src="img/entwicklungshilfe/hochzeit.jpg"></li>
+
+        <li><img src="img/karlstadt/blumen.jpg"></li>
+        <li><img src="img/karlstadt/strand.jpg"></li>
+        <li><img src="img/karlstadt/strand2.jpg"></li>
+        <li><img src="img/karlstadt/wasser.jpg"></li>
+        <li><img src="img/karlstadt/anzug.jpg"></li>
+        <li><img src="img/karlstadt/hochbeet.jpg"></li>
+        <li><img src="img/karlstadt/familie.jpg"></li>
+    </ul>
+    <div class="pfeile">
+        <button id="zurueck" onclick="bildwechsel(-1)">&lt;</button>
+        <button id="vor" onclick="bildwechsel(1)">&gt;</button>
+    </div>
+
+    <div id="text">
+        <h1>Josef Görlich</h1>
+        <h2>09.03.1941 - 02.05.2024</h2>
+    </div>
+
+</body>
 </html>
